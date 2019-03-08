@@ -8,8 +8,9 @@ public class roboghostbehavior : MonoBehaviour
 
     bool dead;
     bool waking = true;
+    bool dying = false;
     public bool hit;
-
+    float dyingtime = 2;
     public float force;
 
     
@@ -55,6 +56,17 @@ public class roboghostbehavior : MonoBehaviour
             // transform.GetComponent<Rigidbody>().AddForce(new Vector3(diff.x, .5f, diff.z), ForceMode.Impulse);
            
             transform.GetComponent<Rigidbody>().AddForceAtPosition(-diff/3, hitPos, ForceMode.Force);
+            dying = true;
+            if (dying)
+            {
+                transform.GetComponent<Rigidbody>().detectCollisions = false;
+                dyingtime -= Time.deltaTime;
+                if (dyingtime <= 0)
+                {
+                    Destroy(transform.gameObject);
+                }
+                
+            }
         }
      
         if (!dead && !waking)
@@ -82,16 +94,26 @@ public class roboghostbehavior : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "desk")
+        if (col.gameObject.tag == "desk" )
         {
             transform.GetComponent<Rigidbody>().detectCollisions = false;
         }
-      
+
+        if( col.gameObject.tag == "protoroboghost")
+        {
+            transform.GetComponent<Rigidbody>().detectCollisions = false;
+            var dist = transform.position - col.gameObject.transform.position;
+            transform.position = transform.position + (dist * Time.deltaTime);
+        }
+
+
+
+
     }
 
     void OnCollisionExit(Collision col)
     {
-        if (col.gameObject.tag == "desk")
+        if (col.gameObject.tag == "desk" || col.gameObject.tag == "protoroboghost")
         {
             transform.GetComponent<Rigidbody>().detectCollisions = true;
         }

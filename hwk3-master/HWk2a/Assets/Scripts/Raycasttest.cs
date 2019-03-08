@@ -38,6 +38,14 @@ public class Raycasttest : MonoBehaviour {
     private List<Color> originalColors = new List<Color>();
     Light lastHighlight;
 
+    Material laserpointer;
+    Material laserMat;
+
+    public int maxSize = 30;
+
+    public float delay = 0.25f;
+
+
     Vector3 lastPosition;
     Vector3 initialPos;
     Quaternion initialRot;
@@ -48,18 +56,31 @@ public class Raycasttest : MonoBehaviour {
     public AudioClip laser;
     private AudioSource source;
 
+    Gradient gradient;
+    Gradient gradient2;
+
     int colorCounter = 0;
 
     void Start()
     {
         source = GetComponent<AudioSource>();
         laserLine = GetComponent<LineRenderer>();
+       
+        laserpointer = (Material)Resources.Load("laserPointer", typeof(Material));
+        laserLine.material = laserpointer;
+        laserMat = (Material)Resources.Load("laser", typeof(Material));
+
+        
+
+       // laserLine.colorGradient = gradient;
+       
         chairPre = Resources.Load("chair") as GameObject;
         deskPre = Resources.Load("desk2") as GameObject;
-     
+        
        
          transform.forward = GameObject.Find("CenterEyeAnchor").transform.forward;
     }
+
     
     // Update is called once per frame
     void Update()
@@ -80,7 +101,10 @@ public class Raycasttest : MonoBehaviour {
             lasertime -= Time.deltaTime;
             if (lasertime >= 0)
             {
-                laserLine.material.color = Color.blue;
+                laserLine.SetWidth(0.02f, 0.02f);
+
+                laserLine.material = laserMat;
+               
             }
             else
             {
@@ -90,7 +114,8 @@ public class Raycasttest : MonoBehaviour {
         }
         else
         {
-            laserLine.material.color = Color.red;
+            laserLine.SetWidth(0.005f, 0.005f);
+            laserLine.material = laserpointer;
         }
        
         

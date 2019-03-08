@@ -26,7 +26,12 @@ public class Collidingscript : MonoBehaviour
             collisionOne = true;
             firstSet = GameObject.Find("firstSet");
             Debug.Log("collided");
-            firstSet.transform.FindChild("protoroboghost").gameObject.SetActive(true);
+            foreach (Transform child in firstSet.transform)
+            {
+                child.gameObject.SetActive(true);
+               
+            }
+            //firstSet.transform.FindChild("protoroboghost").
         }
 
         
