@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - desk
+  - chair
+  - ground
+  - roboGhost
+  - 1stCollider
+  - player
+  - redOne
+  - redHolder
+  - orangeOne
+  - orangeHolder
+  - yellowOne
+  - yellowHolder
+  - greenOne
+  - greenHolder
+  - blueOne
+  - blueHolder
+  - indigoOne
+  - indigoHolder
+  - violetOne
+  - violetHolder
+  - backPackObj
+  - left
+  - right
+  - wall
+  - dagger
+  - letter
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
