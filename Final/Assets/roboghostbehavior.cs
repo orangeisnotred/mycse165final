@@ -29,6 +29,9 @@ public class roboghostbehavior : MonoBehaviour
 
     public AudioClip summoningAudio;
     private AudioSource source;
+    public AudioClip knifeAudio;
+    public AudioClip hitAudio;
+    public AudioClip trackingAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +46,14 @@ public class roboghostbehavior : MonoBehaviour
         diff2 = risingDiff - transform.position;
         diff2 = Vector3.Normalize(diff2);
         sparks = transform.GetChild(2).GetComponent<ParticleSystem>();
-       
+        //InvokeRepeating("PlayTracking", 1.0f, 2.0f);
+
+    }
+
+    void PlayTracking()
+    {
+        if(!dead && !waking)
+            source.PlayOneShot(trackingAudio, 1.0f);
     }
 
     // Update is called once per frame
@@ -193,7 +203,7 @@ public class roboghostbehavior : MonoBehaviour
         if(col.gameObject.tag == "Player")
         {
             playerCollider.playerHp--;
-            
+            source.PlayOneShot(hitAudio, 1);
             //transform.GetComponent<Rigidbody>().detectCollisions = false;
             var dist = transform.position - col.gameObject.transform.position;
             transform.position = transform.position + (dist * 3);
@@ -202,8 +212,12 @@ public class roboghostbehavior : MonoBehaviour
 
         if (col.gameObject.tag == "dagger")
         {
-            if(hp == 1)
-                 hit = true;
+            if (hp == 1)
+            {
+                hit = true;
+                source.PlayOneShot(knifeAudio, .8f);
+            }
+
             //else
             //{
             //    var dist = transform.position - col.gameObject.transform.position;

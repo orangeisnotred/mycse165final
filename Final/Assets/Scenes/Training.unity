@@ -6710,11 +6710,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606596799}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300001, guid: 1dd706bb85d8aef4e83a6229dbd62c36,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 267c2fe82fec4b342aacb8a605292671, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 67fc95c81afa9c04496426b5b1c6600a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.02
   m_Pitch: 1
@@ -7967,11 +7967,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 6137611906383318424, guid: f6824c641748ca64580c4e50da9d3de4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 8221744448295698600, guid: f6824c641748ca64580c4e50da9d3de4,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -7981,6 +7976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137611906383318424, guid: f6824c641748ca64580c4e50da9d3de4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6824c641748ca64580c4e50da9d3de4, type: 3}
@@ -9275,7 +9275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 199, y: -283}
+  m_AnchoredPosition: {x: 199, y: -165}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1410694618
@@ -9930,11 +9930,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f194b26d26f5c1d489f1ffd38216a585, type: 2}
-    - target: {fileID: 9072709910255935417, guid: f5f6e2fdd3fa04743b4c11262fe3053e,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1605427462, guid: f5f6e2fdd3fa04743b4c11262fe3053e, type: 3}
       propertyPath: isDropper
       value: 1
@@ -9944,6 +9939,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5537417343800037656, guid: f0842a6fec31c9149936a65fe57d120d,
         type: 3}
+    - target: {fileID: 9072709910255935417, guid: f5f6e2fdd3fa04743b4c11262fe3053e,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5f6e2fdd3fa04743b4c11262fe3053e, type: 3}
 --- !u!4 &1535685987 stripped
@@ -11035,7 +11035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 169, y: -282}
+  m_AnchoredPosition: {x: 169, y: -159}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2076224789

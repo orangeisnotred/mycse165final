@@ -4889,7 +4889,7 @@ Transform:
   m_GameObject: {fileID: 1692289791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4135, y: 0.3846883, z: 1.4135}
+  m_LocalScale: {x: 3.9240172, y: 1.0679331, z: 3.9240172}
   m_Children:
   - {fileID: 1307961545}
   - {fileID: 789940783}
@@ -4992,6 +4992,9 @@ MonoBehaviour:
   cube: {fileID: 0}
   hitPos: {x: 0, y: 0, z: 0}
   summoningAudio: {fileID: 8300000, guid: dac66b2d48068cd42b6fee2163b58891, type: 3}
+  knifeAudio: {fileID: 8300000, guid: 3ac94fff172d34744bad40d09cd00be3, type: 3}
+  hitAudio: {fileID: 8300000, guid: df51701f64832ef4ab6d90a4baf904c8, type: 3}
+  trackingAudio: {fileID: 8300000, guid: c42b3dad7cdbccf4295b7fbcebd94b84, type: 3}
 --- !u!82 &1692289797
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5006,7 +5009,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: dac66b2d48068cd42b6fee2163b58891, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
-  m_Pitch: 1
+  m_Pitch: 0.8
   Loop: 0
   Mute: 0
   Spatialize: 1

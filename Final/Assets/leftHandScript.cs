@@ -55,14 +55,17 @@ public class leftHandScript : MonoBehaviour
     bool firstSetLastKilled;
     bool secondSetLastKilled;
 
+  
+   
 
 
     // Start is called before the first frame update
     void Start()
     {
+
         backPackObj = GameObject.Find("/backPackObj");
         dagger = GameObject.Find("dagger");
-        highlight = (Material)Resources.Load("indigoCube", typeof(Material));
+        highlight = (Material)Resources.Load("highLight", typeof(Material));
         backPackObj.SetActive(true);
         canSwitch = true;
         battleMode = true;
@@ -97,26 +100,30 @@ public class leftHandScript : MonoBehaviour
                     lastRobo.transform.GetComponent<Renderer>().material = original;
                 }
             }
-            if (hit.transform.tag == "roboGhost")
+            if (hit.transform.tag == "roboGhost" )
             {
-                original = hit.transform.GetComponent<Renderer>().material;
-                hit.transform.GetComponent<Renderer>().material = highlight;
-                lastRobo = hit.transform.gameObject;
-                if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch) && battleMode)
+                roboghostbehavior script = hit.transform.GetComponent<roboghostbehavior>();
+                if (script.hp == 1)
                 {
-                     Debug.Log("hittingghost");
-                  
-                    //Raycasttest.stop = true;
-                    roboghostbehavior script = hit.transform.GetComponent<roboghostbehavior>();
-
-                    if (script.hp == 1)
+                    original = hit.transform.GetComponent<Renderer>().material;
+                    hit.transform.GetComponent<Renderer>().material = highlight;
+                    lastRobo = hit.transform.gameObject;
+                    if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch) && battleMode)
                     {
-                        Vector3 dist = hit.transform.position - transform.root.transform.position;
-                        dist = Vector3.Normalize(dist);
-                        Vector3 newPos = transform.root.transform.position + (dist * Time.deltaTime * 15);
-                        newPos.y = transform.root.position.y;
-                        transform.root.transform.position = newPos;
+                        Debug.Log("hittingghost");
 
+                        //Raycasttest.stop = true;
+
+
+                        if (script.hp == 1)
+                        {
+                            Vector3 dist = hit.transform.position - transform.root.transform.position;
+                            dist = Vector3.Normalize(dist);
+                            Vector3 newPos = transform.root.transform.position + (dist * Time.deltaTime * 15);
+                            newPos.y = transform.root.position.y;
+                            transform.root.transform.position = newPos;
+
+                        }
                     }
                 }
             }

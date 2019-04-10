@@ -10,8 +10,8 @@ public class playerCollider : MonoBehaviour
 {
     // Start is called before the first frame update
     public static bool gameOver = false;
-    public static int playerHp = 300;
-    int currHp = 300;
+    public static int playerHp = 20;
+    int currHp = 20;
     bool FadingOut = false;
     bool Dying = false;
     TextMeshPro deathText;
@@ -38,7 +38,7 @@ public class playerCollider : MonoBehaviour
             currHp = playerHp;
             overlay.transform.GetChild(1).transform.GetComponent<Image>().CrossFadeAlpha(1, 2.0f, false);
             overlay.transform.GetChild(0).transform.GetComponent<Image>().CrossFadeAlpha(1, 2.0f, false);
-            overlay.transform.GetChild(1).transform.GetComponent<Image>().fillAmount += .2f;
+            overlay.transform.GetChild(1).transform.GetComponent<Image>().fillAmount += .05f;
             FadingOut = true;
 
         }
@@ -90,7 +90,9 @@ public class playerCollider : MonoBehaviour
                     Debug.Log("Not Resetting");
              
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                    playerHp = 3;
+                    playerHp = 10;
+                    deathScreen.transform.GetComponent<Image>().fillAmount = 0;
+                    currHp = 10;
                 }
                 dyingTime -= Time.deltaTime;
 

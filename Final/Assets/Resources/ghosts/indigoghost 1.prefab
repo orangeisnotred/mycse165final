@@ -134,6 +134,9 @@ MonoBehaviour:
   cube: {fileID: 0}
   hitPos: {x: 0, y: 0, z: 0}
   summoningAudio: {fileID: 8300000, guid: dac66b2d48068cd42b6fee2163b58891, type: 3}
+  knifeAudio: {fileID: 8300000, guid: 3ac94fff172d34744bad40d09cd00be3, type: 3}
+  hitAudio: {fileID: 8300000, guid: df51701f64832ef4ab6d90a4baf904c8, type: 3}
+  trackingAudio: {fileID: 8300000, guid: c42b3dad7cdbccf4295b7fbcebd94b84, type: 3}
 --- !u!82 &9072709910255935417
 AudioSource:
   m_ObjectHideFlags: 0
@@ -148,7 +151,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: dac66b2d48068cd42b6fee2163b58891, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
-  m_Pitch: 1
+  m_Pitch: 0.9
   Loop: 0
   Mute: 0
   Spatialize: 1
@@ -398,11 +401,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7788737767185321142}
     m_Modifications:
-    - target: {fileID: 144750144205522155, guid: 8b12d36165773e842bdab58c293ece25,
-        type: 3}
-      propertyPath: m_Name
-      value: Vparticle
-      objectReference: {fileID: 0}
     - target: {fileID: 144750144205522152, guid: 8b12d36165773e842bdab58c293ece25,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -472,6 +470,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3.5546017
+      objectReference: {fileID: 0}
+    - target: {fileID: 144750144205522155, guid: 8b12d36165773e842bdab58c293ece25,
+        type: 3}
+      propertyPath: m_Name
+      value: Vparticle
       objectReference: {fileID: 0}
     - target: {fileID: 144750144205522153, guid: 8b12d36165773e842bdab58c293ece25,
         type: 3}
